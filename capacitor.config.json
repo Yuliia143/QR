@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Interventi",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

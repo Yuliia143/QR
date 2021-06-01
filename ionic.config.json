@@ -1,0 +1,7 @@
+{
+  "name": "Interventi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
