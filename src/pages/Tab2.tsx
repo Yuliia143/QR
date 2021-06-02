@@ -10,10 +10,9 @@ import {
   useIonAlert
 } from '@ionic/react';
 import './Tab2.css';
-import { Plugins } from '@capacitor/core';
 import { useState } from 'react';
+import { BarcodeScanner, SupportedFormat } from '@capacitor-community/barcode-scanner';
 
-const {BarcodeScanner} = Plugins;
 
 const Tab2: React.FC = () => {
   const [present] = useIonAlert();
@@ -25,10 +24,10 @@ const Tab2: React.FC = () => {
     if (allowed) {
       setScanActive(true);
       BarcodeScanner.hideBackground();
-      const result = await BarcodeScanner.startScan();
+      const result = await BarcodeScanner.startScan({ targetedFormats: [SupportedFormat.QR_CODE] });
       console.log(result);
       if (result.hasContent) {
-        setResult(result.content);
+        setResult(result.content as string);
         setScanActive(false);
       }
     }
