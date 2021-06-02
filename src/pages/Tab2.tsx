@@ -80,7 +80,7 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonButton onClick={startScanner} hidden={scanActive}>Scan</IonButton>
-        <p className="ion-text-center">{res ? res : ''}</p>
+        <p hidden={scanActive}>RES: {res ? res : ''}</p>
 
         <IonRow hidden={!scanActive}>
           <IonCol className="ion-no-padding">
